@@ -1,0 +1,201 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+  font-family: 'RIDIBatang';
+}
+html {
+  background-image: url('images/baseballstadium01.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  padding-bottom: 0px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  border-color: #888888;
+  border-width: 1px;
+  border-style: dashed;
+}
+#container {
+  width: 1200px;
+  margin: 30px auto;
+}
+#logo {
+  float: left;
+  height: 70px;
+  width: 300px;
+  margin: 25px auto;
+  background-image: url('images/ball.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+#logo h1 {
+  margin: 0 auto;
+  padding: 0;
+  text-align: right;
+  font-size: 50px;
+}
+nav {
+  float: right;
+  width: 230px;
+  height: 100px;
+  padding-top: 10px; 
+}
+#topMenu {  
+  height: 60px; 
+}
+#topMenu > li {
+  float: left; 
+  position: relative;  
+}
+#topMenu > li > a{
+  display: block;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 10px 15px;
+  color: white;
+}
+#header {
+  width: 100%;
+  height: 120px;
+  background: #980000;
+  background: linear-gradient(270deg, #980000, #FFFFFF)
+}
+#contents {
+  width: 1140px;
+  height: 1000px;
+  margin: 20px auto;
+/*  background-color: #f7f7f7;*/
+}
+
+
+#interesting {
+  width: 100%;
+  height: 150px;
+  margin: 10px auto;
+  border: solid #EAEAEA;
+  border-width: 2px 5px 5px 2px;
+  background-image: url('images/LG.png');
+  /*로고 이미지 상단이 잘리는 것은 의도한것입니다..!*/
+  background-position: bottom 3px right 20px;
+  background-size: 20%;
+  background-repeat: no-repeat;
+}
+#interesting h3 {
+  float: left;
+  text-align: center;
+  font-size: 35px;
+  width: 25%;
+  height: 90px;
+  margin: 30px auto;
+}
+#interesting p {
+  float: left;
+  text-align: right;
+  font-size: 35px;
+  width: 45%;
+  height: 80px;
+  margin: 70px 20px 0px;
+}
+
+ /*클래스*/
+.teams{
+  float:left;
+  border: solid #EAEAEA;
+  border-width: 2px 5px 5px 2px;
+  width: 190px;
+  height: 250px;      
+  margin: 20px 9px;
+  padding: 20px 6px;
+  text-align: center;
+}
+.teams p {
+  margin-top: 160px;
+  font-size: 20px;
+}
+.teams b {
+  font-size: 23px;
+}
+
+#lg:hover, #kia:hover, #samsung:hover, #nc:hover,
+#lotte:hover, #doosan:hover, #kt:hover, #ssg:hover,
+#kiwoom:hover, #hanhwa:hover {
+  transform: translate(-10px, -10px);
+}
+#lg {
+  background-image: url('images/LG.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#samsung {
+  background-image: url('images/SAMSUNG.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#nc {
+  background-image: url('images/NC.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#hanhwa {
+  background-image: url('images/HANHWA.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#doosan {
+  background-image: url('images/DOOSAN.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#kt {
+  background-image: url('images/KT.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#kiwoom {
+  background-image: url('images/KIWOOM.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#ssg {
+  background-image: url('images/SSG.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#lotte {
+  background-image: url('images/LOTTE.png');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+#kia {
+  background-image: url('images/KIA.jpg');
+  background-position: top 17px center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+}
+
+#footer {
+  width: 100%;
+  height: 300px;
+  text-align: right;
+}
