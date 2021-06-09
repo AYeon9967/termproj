@@ -10,11 +10,10 @@ import baseball.vo.Player;
 public class BaseballDao {
 	
 	private static BaseballDao dao = new BaseballDao();
+	
 	private BaseballDao() {}
 
-	public static BaseballDao getInstance() {
-		return dao;
-	}
+	public static BaseballDao getInstance() { return dao; }
 	
 	public Connection connect() {
 		Connection conn = null;
@@ -25,9 +24,7 @@ public class BaseballDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, id, pwd);
-		} catch(Exception e) {
-			System.out.print("MDAO: connect " + e);
-		}
+		} catch(Exception e) { System.out.print("MDAO: connect " + e); }
 		return conn;
 	}
 	
@@ -68,12 +65,8 @@ public class BaseballDao {
 			pstmt.setString(4, player.getEmail());
 			pstmt.setString(5, player.getFavorite());
 			pstmt.executeUpdate();
-		} catch(Exception e) {
-			System.out.print("Join error" + e);
-		} finally {
-			close(conn, pstmt, null);
-		}
-		
+		} catch(Exception e) { System.out.print("Join error" + e);
+		} finally { close(conn, pstmt, null); }
 	}
 
 	public boolean login(String id, String pwd) {
@@ -93,11 +86,8 @@ public class BaseballDao {
 			} else {
 				result = false;
 			}
-		} catch(Exception e) {
-			System.out.print("Login error " + e);
-		} finally {
-			close(conn, pstmt, rs);
-		}	
+		} catch(Exception e) { System.out.print("Login error " + e);
+		} finally { close(conn, pstmt, rs); }	
 		
 		return result;
 	}
@@ -118,13 +108,52 @@ public class BaseballDao {
 			} else {
 				result = false;
 			}
-		} catch(Exception e) {
-			System.out.print("Overlap error " + e);
-		} finally {
-			close(conn, pstmt, rs);
-		}	
+		} catch(Exception e) { System.out.print("Overlap error " + e);
+		} finally { close(conn, pstmt, rs); }	
 		
 		return result;
+	}
+
+	public Player playerSearch(String sessionID) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Player player = null;
+		
+		try {
+			conn = connect();
+			pstmt = conn.prepareStatement("select * from player where id=?;");
+			pstmt.setString(1, sessionID);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				player = new Player();
+				player.setId(rs.getString(1));
+				player.setPwd(rs.getString(2));
+				player.setName(rs.getString(3));
+				player.setEmail(rs.getString(4));
+				player.setFavorite(rs.getString(5));
+			}
+		} catch(Exception e) { System.out.print("pSearch error " + e);
+		} finally { close(conn, pstmt, rs); }
+		
+		return player;
+	}
+
+	public void playerUpdate(Player player) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = connect();
+			pstmt = conn.prepareStatement("update player set pwd=?, name=?, email=?, favorite=? where id=?;");
+			pstmt.setString(5, player.getId());
+			pstmt.setString(1, player.getPwd());
+			pstmt.setString(2, player.getName());
+			pstmt.setString(3, player.getEmail());
+			pstmt.setString(4, player.getFavorite());
+			pstmt.executeUpdate();
+		} catch(Exception e) { System.out.print("pUpdate error " + e);
+		} finally { close(conn, pstmt, null); }		
 	}
 
 }

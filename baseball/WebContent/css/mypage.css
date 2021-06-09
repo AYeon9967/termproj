@@ -7,23 +7,22 @@
     font-style: normal;
 }
 * {
-  font-family: 'TmoneyRoundWindRegular';
+  	font-family: 'TmoneyRoundWindRegular';
+	margin: 4px 0;
 }
 .controller {
-	padding: 15px 0px;
-	margin: 25px auto;
-	width: 840px;
-	text-align: center;
+	padding: 25px 0;
+	margin: auto;
+	width: 800px;
 }
 table {
-	width: 840px;
-	padding: 10px 0;
-	margin: 30px auto;
+	width: 800px;
+	margin: 25px 0;
+	padding: 20px;
 	border-collapse: collapse;
 }
-th {
-	background-color: rgb(100, 100, 100);
-	color: white;
+tr {
+	height: 65px;
 }
 button {
 	padding: 5px 12px;
@@ -31,7 +30,7 @@ button {
 	color: white;
 	border-color: gray;
 	border-width: 1px;
-	width: 400px;
+	width: 380px;
 	height: 30px;
 	margin: 20px 4px;
 	border: none;
@@ -42,21 +41,25 @@ button:hover {
 	color: #980000;
 	border-color: gray;
 	border-width: 1px;
-	width: 400px;
+	width: 380px;
 	height: 30px;
 	margin: 20px 4px;
 	border: none;
 }
-a {
-	text-decoration: none;
-	color: black;
+input {
+	width: 300px;
+	height: 20px;
 }
-a:hover {
-	text-decoration-line: underline;
+p {
+	color: gray;
+	font-size: 13px;
 }
-td{
-	height: 40px;
+#content {
+	width: 800px;
+	height: 400px;
+	text-align: left;
 }
-#but{
-	text-align: center;
+#sbutton {
+	height: 28px;
+	width: 200px;
 }

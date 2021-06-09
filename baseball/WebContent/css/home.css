@@ -4,9 +4,13 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 * {
-  font-family: 'RIDIBatang';
+  font-family: 'TmoneyRoundWindRegular';
 }
 html {
   background-image: url('images/baseballstadium01.jpg');

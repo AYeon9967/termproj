@@ -55,7 +55,7 @@ nav {
 			<a href="home.jsp"><img src="css/images/LOGO.png"></a>
 		</div>
 	<% 
-	String sessionID = (String)session.getAttribute("id");
+		String sessionID = (String)session.getAttribute("id");
 		if(sessionID == null) { %>
 			<nav>
 			<ul id="topMenu">
@@ -66,11 +66,9 @@ nav {
 	<% } else { %>
 		<nav>
 			<ul id="topMenu">
-				<li> <a href="myPage.jsp"><%= sessionID %> 님 접속중</a> </li>
+				<li> <a href="mypage.do"><%= sessionID %> 님 접속중</a> </li>
 			</ul>
-			
 		</nav>
-			
 	<% } %>
 </header>
 

@@ -26,4 +26,12 @@ public class Service {
 		return dao.overlap(id);
 	}
 
+	public Player playerSearch(String sessionID) {
+		return dao.playerSearch(sessionID);
+	}
+
+	public void playerUpdate(Player player) {
+		dao.playerUpdate(player);		
+	}
+
 }

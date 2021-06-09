@@ -1,30 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>야구볼래? 회원가입</title>
-<link rel="stylesheet" href="css/join.css">
+<link rel="stylesheet" href="css/mypage.css">
 </head>
 <body>
-	<h1>Welcome to 야구볼래?</h1>
-	<form action="join.do" method="post" id="signup">
-	<p>* 필수 입력 사항</p>
-		<fieldset>
-			<legend>가입 정보</legend>
-			<ul>
-				<li>
-           			<label for="id">아이디 *</label>
-           			<input type="text" name="id" placeholder="8-16자 이내" autofocus required>
-          			${msg }<br>
-        		</li>
-        		<li>
-          			<label for="pwd">비밀번호 *</label>
-         			<input type="password" name="pwd" placeholder="영문, 숫자, 특수문자 혼합" required>
-         		</li>
-         		<li>
-          			<label for="favorite">관심구단</label>
+
+<%@ include file="Head.jsp" %>
+
+<div class="controller">
+<form action="join.do" method="post">
+		<table>
+			<tr>
+				<td width="300px"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><h3>가입정보</h3></td>
+			</tr>
+			<tr>
+				<td>아이디 *<br></td>
+				<td><input type="text" name="id" placeholder="8-16자 이내" autofocus required ></td>
+			</tr>
+			<tr>
+				<td>비밀번호 *</td>
+				<td><input type="password" name="pwd" placeholder="영문, 숫자, 특수문자 혼합" required></td>
+			</tr>
+			<tr>
+				<td><label for="favorite">관심구단</label></td>
+				<td>
           			<select name="favorite">
           				<option value="null">관심구단을 선택해주세요</option>
           				<option value="lg">엘지 트윈스</option>
@@ -38,26 +44,29 @@
           				<option value="lotte">롯데 자이언츠</option>
           				<option value="nc">엔씨 다이노스</option>
           			</select>
-         		</li>
-			</ul>
-		</fieldset>
-		<fieldset>
-			<legend>회원 정보</legend>
-			<ul>
-				<li>
-          			<label for="name">이름 *</label>
-          			<input type="text" name="name" placeholder="공백없이 입력하세요" required>
-         		</li>       
-         		<li>
-           			<label for="mail">이메일</label>
-           			<input type="email" name="mail">
-        		</li>
-			</ul>
-		</fieldset>
-		<fieldset>
-			<input class="button" type="submit" value="가입하기">
-		</fieldset>
-	</form>
-	
+          		</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><h3>회원정보</h3></td>
+			</tr>
+			<tr>
+				<td>이름 *</td>
+				<td><input type="text" name="name" placeholder="공백없이 입력하세요" required></td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="email" name="mail"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><input id="sbutton" type="submit" value="가입하기"></td>
+			</tr>
+		</table>
+</form>
+	<div>
+		<button> -- </button>
+		<a href="home.jsp"><button>홈으로</button></a>
+	</div>
+</div>
+
 </body>
 </html>

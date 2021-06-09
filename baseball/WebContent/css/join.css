@@ -1,17 +1,13 @@
 @charset "UTF-8";
 @font-face {
-    font-family: 'RIDIBatang';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-family: 'KCC-Kimhoon';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-Kimhoon-Regular.woff') format('woff');
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 * {
-	font-family: 'RIDIBatang';
+	font-family: 'TmoneyRoundWindRegular';
 }
 body {
 	background-image: url('images/sky02.jpg');
@@ -22,7 +18,6 @@ h1 {
 	font-size: 50px;
 	margin-top: 50px;
 	text-align: center;
-	font-family: 'KCC-Kimhoon';
 }
 select {
 	border: 1px solid #ccc;

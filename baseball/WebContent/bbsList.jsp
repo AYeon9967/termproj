@@ -71,7 +71,7 @@ List<Bbs> list = bbsDao.selectList(team);
 		<%
 		count++;
 	}
-	if (count == 0) { %> <tr><td colspan="7">작성한 게시글이 없습니다.</td></tr> <% } %>
+	if (count == 0) { %> <tr><td colspan="5">작성한 게시글이 없습니다.</td></tr> <% } %>
 	</table>
 </div>
 

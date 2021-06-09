@@ -8,24 +8,39 @@
 <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-	<form id="login" method="post" action="login.do">
-		<h1>Let's Play Baseball!</h1>
-		<fieldset>
-			<ul>
-				<li>
-					<label for="id">아이디</label>
-           			<input type="text" name="id" required>
-				</li>
-				<li>
-          			<label for="pwd">비밀번호</label>
-         			<input type="password" name="pwd" required>
-         		</li>
-			</ul>
-			${error }<br>
-			<input type = "submit" value = "LOGIN">
-		</fieldset>
 
+<%@ include file="Head.jsp" %>
+<div class="controller">
+	<form action="login.do" method="post" >
+		<table>
+			<tr>
+				<td colspan="2" align="center"><h1>Let's Play Baseball!</h1></td>
+			</tr>
+			<tr>
+				<td width="300px"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>아이디<br></td>
+				<td><input type="text" name="id" required></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="pwd" required></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><input id="sbutton" type="submit" value="LOGIN"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="right">${error }</td>
+			</tr>
+		</table>	
 	</form>
-
+	<div>
+		<button> -- </button>
+		<a href="home.jsp"><button>홈으로</button></a>
+	</div>
+</div>
 </body>
 </html>
