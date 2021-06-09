@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+.controller {
+	padding: 15px 0px;
+	margin: 25px auto;
+	width: 840px;
+	text-align: center;
+}
+table {
+	width: 840px;
+	padding: 10px 0;
+	margin: 30px auto;
+	border-collapse: collapse;
+}
+th {
+	background-color: rgb(100, 100, 100);
+	color: white;
+}
+button {
+	padding: 5px 12px;
+	background-color: #980000;
+	color: white;
+	border-color: gray;
+	border-width: 1px;
+	width: 400px;
+	height: 30px;
+	margin: 20px 4px;
+	border: none;
+}
+button:hover {
+	padding: 5px 12px;
+	background-color: white;
+	color: #980000;
+	border-color: gray;
+	border-width: 1px;
+	width: 400px;
+	height: 30px;
+	margin: 20px 4px;
+	border: none;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	text-decoration-line: underline;
+}
+td{
+	height: 40px;
+}
+#but{
+	text-align: center;
+}

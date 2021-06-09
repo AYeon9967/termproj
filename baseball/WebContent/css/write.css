@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+textarea {
+	resize: none;
+	width: 805px;
+	height: 250px;
+}
+button {
+	padding: 5px 12px;
+	background-color: #980000;
+	color: white;
+	border-color: gray;
+	border-width: 1px;
+	width: 400px;
+	height: 30px;
+	margin: 20px 4px;
+	border: none;
+}
+button:hover {
+	padding: 5px 12px;
+	background-color: white;
+	color: #980000;
+	border-color: gray;
+	border-width: 1px;
+	width: 400px;
+	height: 30px;
+	margin: 20px 4px;
+	border: none;
+}
+#write {
+	padding: 25px 0;
+	margin: auto;
+	width: 840px;
+}
+#category {
+	width: 100px;
+	height: 30px;
+}
+#title {
+	width: 700px;
+	height: 24px;
+}
+#button {
+	width: 100px;
+	height: 30px;
+	border-color: gray;
+	border-width: 1px;
+}
+#button:hover {
+	width: 100px;
+	height: 30px;
+	border-color: gray;
+	background-color: black;
+	color: white;
+	border-width: 1px;
+}

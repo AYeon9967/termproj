@@ -15,12 +15,7 @@ html {
   background-position: left bottom;
   padding-bottom: 0px;
 }
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
+
 hr {
   border-color: #888888;
   border-width: 1px;
@@ -29,48 +24,6 @@ hr {
 #container {
   width: 1200px;
   margin: 30px auto;
-}
-#header {
-  width: 100%;
-  height: 300px; 
-  background: #980000;
-  background: linear-gradient(270deg, #980000, #FFFFFF)
-}
-#logo {
-  float: left;
-  height: 100px;
-  width: 300px;
-  margin: 25px auto;
-  background-image: url('images/ball.png');
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: contain;
-}
-#logo h1 {
-  margin: 0 auto;
-  padding: 0;
-  text-align: right;
-  font-size: 50px;
-}
-nav {
-  float: right;
-  width: 230px;
-  height: 100px;
-  padding-top: 10px; 
-}
-#topMenu {  
-  height: 60px; 
-}
-#topMenu > li {
-  float: left; 
-  position: relative;  
-}
-#topMenu > li > a{
-  display: block;
-  font-size: 1.1em;
-  font-weight: 600;
-  padding: 10px 15px;
-  color: white;
 }
 #contents {
   width: 1140px;
@@ -159,7 +112,7 @@ nav {
   background-repeat: no-repeat;
 }
 #kia {
-  background-image: url('images/KIA.jpg');
+  background-image: url('images/KIA.png');
   background-position: top 17px center;
   background-size: 75%;
   background-repeat: no-repeat;

@@ -9,7 +9,6 @@
 
 <!-- 제이쿼리 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
- 
 <!-- Slick 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
@@ -37,29 +36,8 @@
 </script>
 <body>
 
-<header id="header">
-		<div id="logo">
-			<h1>야구볼래?</h1>
-		</div>
-		
-	<% 
-	String sessionID = (String)session.getAttribute("id");
-		if(sessionID == null) { %>
-			<nav>
-			<ul id="topMenu">
-					<li><a href="memberLogin.jsp">로그인</a></li>
-					<li><a href="memberJoin.jsp">회원가입</a></li>
-			</ul>
-			</nav>
-	<% } else { %>
-		<nav>
-			${sessionID }님 접속중
-		</nav>
-			
-	<% } %>
-		
-		
-</header>
+<%@ include file="Head.jsp" %>
+
 <div id="container">
 	<div id="slider-div">
 		    <div><img src="css/images/img01.jpg"></div>

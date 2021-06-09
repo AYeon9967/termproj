@@ -133,6 +133,7 @@ public class BbsDao {
 				bbsDto.setBbsdate(rs.getString("bbsdate"));
 				bbsDto.setBbscategory(rs.getString("bbscategory"));
 				bbsDto.setId(rs.getString("id"));
+				bbsDto.setTeam(rs.getString("team"));
 				bbsDto.setBbsimg(rs.getString("bbsimg"));
 			}
 			
