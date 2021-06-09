@@ -11,7 +11,7 @@
 	String team = request.getParameter("team");
 %>
 
-<form action="bbswrite.do" method="post">
+<form action="bbswrite.do" method="post" enctype="multipart/form-data">
 
 	<input type="hidden" name="team" value="<%= team %>">
 

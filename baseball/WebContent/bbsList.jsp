@@ -10,6 +10,25 @@
 <head>
 <meta charset="UTF-8">
 <title>BOARD</title>
+<%
+String sessionID = (String)session.getAttribute("id");
+
+String team = request.getParameter("team");
+String image = null;
+if(team.equals("lg")) { image = "css/images/slg.jpg"; }
+else if(team.equals("samsung")) { image = "css/images/ssamsung.jpg"; }
+else if(team.equals("nc")) { image = "css/images/snc.jpg"; }
+else if(team.equals("kt")) { image = "css/images/skt.jpg"; }
+else if(team.equals("doosan")) { image = "css/images/sdoosan.jpg"; }
+else if(team.equals("ssg")) { image = "css/images/sssg.jpg"; }
+else if(team.equals("lotte")) {	image = "css/images/slotte.jpg"; }
+else if(team.equals("hanhwa")) { image = "css/images/shanhwa.jpg"; }
+else if(team.equals("kiwoom")) { image = "css/images/skiwoom.png"; }
+else if(team.equals("kia")) { image = "css/images/skia.png"; }
+
+BbsDao bbsDao = BbsDao.getInstance();
+List<Bbs> list = bbsDao.selectList(team);
+%>
 <style>
 .controller {
 	padding: 25px 0;
@@ -41,32 +60,22 @@ a {
 a:hover {
 	text-decoration-line: underline;
 }
+#seats{
+	margin: auto;
+	height: 600px;
+	width: 600px;
+	background-image: url('<%= image %>');
+ 	background-repeat: no-repeat;
+  	background-size: contain;
+}
 </style>
 </head>
 <body>
-<%
-String sessionID = (String)session.getAttribute("id");
 
-String team = request.getParameter("team");
-String image = null;
-if(team.equals("lg")) { image = "css/images/lg.jpg"; }
-else if(team.equals("samsung")) { image = "css/images/samsung.jpg"; }
-else if(team.equals("nc")) { image = "css/images/nc.jpg"; }
-else if(team.equals("kt")) { image = "css/images/kt.jpg"; }
-else if(team.equals("doosan")) { image = "css/images/doosan.jpg"; }
-else if(team.equals("ssg")) { image = "css/images/ssg.jpg"; }
-else if(team.equals("lotte")) {	image = "css/images/lotte.jpg"; }
-else if(team.equals("hanhwa")) { image = "css/images/hanhwa.jpg"; }
-else if(team.equals("kiwoom")) { image = "css/images/kiwoom.jpg"; }
-else if(team.equals("kia")) { image = "css/images/kia.jpg"; }
-
-BbsDao bbsDao = BbsDao.getInstance();
-List<Bbs> list = bbsDao.selectList(team);
-%>
 <div class="controller">
 
-<div>
-	<img src=<%= image %>>
+<div id=seats>
+	
 </div>
 
 <table>
@@ -87,7 +96,7 @@ for (Bbs b : list) {
 	<tr>
 	<td><%=b.getBbscategory() %></td>
 	<td><%=b.getBbsid() %></td>
-	<td><b><a href="bbsview.do?bbsId=<%=b.getBbsid() %>"><%=b.getBbstitle() %></a></b></td>
+	<td><b><a href="bbsview.do?bbsid=<%=b.getBbsid() %>"><%=b.getBbstitle() %></a></b></td>
 	<td><%=b.getBbscontent() %></td>
 	<td><%=b.getId() %></td>
 	<td><%=b.getBbsdate() %></td>

@@ -11,6 +11,7 @@ import java.util.List;
 import baseball.vo.Bbs;
 
 public class BbsDao {
+
 	private static BbsDao dao = new BbsDao();
 	private BbsDao() {}
 
@@ -81,19 +82,19 @@ public class BbsDao {
 	}
 	
 	public List<Bbs> selectList(String team){
-		List<Bbs> list = new ArrayList<>();
-		Connection conn = null;
+		Connection conn = connect();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		List<Bbs> list = new ArrayList<>();
 		
 		try {
-			conn = connect();
 			String sql ="select * from bbs where team=? order by bbsid desc;";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, team);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbsDto = new Bbs();
+				bbsDto.setBbsid(rs.getInt("bbsid"));
 				bbsDto.setBbstitle(rs.getString("bbstitle"));
 				bbsDto.setBbscontent(rs.getString("bbscontent"));
 				bbsDto.setBbsdate(rs.getString("bbsdate"));
@@ -111,5 +112,36 @@ public class BbsDao {
 		return list;
 	}
 
+	public Bbs selectById(String bbsId) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Bbs bbsDto = new Bbs();
+		
+		String sql = "select * from bbs where bbsid = ?";
+		
+		try {
+			conn = connect();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bbsId);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				bbsDto.setBbsid(rs.getInt("bbsid"));
+				bbsDto.setBbstitle(rs.getString("bbstitle"));
+				bbsDto.setBbscontent(rs.getString("bbscontent"));
+				bbsDto.setBbsdate(rs.getString("bbsdate"));
+				bbsDto.setBbscategory(rs.getString("bbscategory"));
+				bbsDto.setId(rs.getString("id"));
+				bbsDto.setBbsimg(rs.getString("bbsimg"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt, rs);
+		}
+		return bbsDto;
+	}
 	
 }
