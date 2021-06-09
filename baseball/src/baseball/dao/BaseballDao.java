@@ -18,16 +18,20 @@ public class BaseballDao {
 	
 	public Connection connect() {
 		Connection conn = null;
+		String url = "jdbc:mysql://localhost:3306/baseball?characterEncoding-UTF-8&serverTimezone=UTC";
+		String id = "root";
+		String pwd = "hello1248";
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/baseball", "root", "hello1248");
+			conn = DriverManager.getConnection(url, id, pwd);
 		} catch(Exception e) {
 			System.out.print("MDAO: connect " + e);
 		}
 		return conn;
 	}
 	
-	public void close(Connection conn, PreparedStatement pstmt) {
+	public void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
 		if(pstmt != null) {
 			try {
 				pstmt.close();
@@ -42,9 +46,6 @@ public class BaseballDao {
 				System.out.print("Conn close error" + e);
 			}
 		}
-	}
-	
-	public void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
 		if(rs != null) {
 			try {
 				rs.close();
@@ -52,7 +53,6 @@ public class BaseballDao {
 				System.out.print("Rs close error" + e);
 			}
 		}
-		close(conn, pstmt);
 	}
 
 	public void join(Player player) {
@@ -71,9 +71,60 @@ public class BaseballDao {
 		} catch(Exception e) {
 			System.out.print("Join error" + e);
 		} finally {
-			close(conn, pstmt);
+			close(conn, pstmt, null);
 		}
 		
+	}
+
+	public boolean login(String id, String pwd) {
+		boolean result = false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = connect();
+			pstmt = conn.prepareStatement("select * from player where id=? and pwd=?;");
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = true;
+			} else {
+				result = false;
+			}
+		} catch(Exception e) {
+			System.out.print("Login error " + e);
+		} finally {
+			close(conn, pstmt, rs);
+		}	
+		
+		return result;
+	}
+
+	public boolean overlap(String id) {
+		boolean result = false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = connect();
+			pstmt = conn.prepareStatement("select * from player where id=?;");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = true;
+			} else {
+				result = false;
+			}
+		} catch(Exception e) {
+			System.out.print("Overlap error " + e);
+		} finally {
+			close(conn, pstmt, rs);
+		}	
+		
+		return result;
 	}
 
 }

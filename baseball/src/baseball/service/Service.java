@@ -16,7 +16,14 @@ public class Service {
 
 	public void join(Player player) {
 		dao.join(player);
-		
+	}
+
+	public boolean login(String id, String pwd) {
+		return dao.login(id, pwd);
+	}
+
+	public boolean overlap(String id) {
+		return dao.overlap(id);
 	}
 
 }

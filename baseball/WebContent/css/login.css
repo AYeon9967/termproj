@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'KCC-Kimhoon';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-Kimhoon-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#login {
+	width: 600px;
+	margin: auto;
+	background-color: #FFD8D8;
+	border-radius: 15px;
+}
+#login h1 {
+	font-family: 'KCC-Kimhoon';
+	font-size: 50px;
+	margin-top: 50px;
+	padding-top: 25px;
+	text-align: center;
+	color: #980000;
+}
+#login fieldset {
+	border: none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+#login ul {
+	list-style: none;
+	width: 70%;
+	margin: 10px auto;
+	padding: 0px;
+}
+#login li {	line-height: 2.5; }
+
+#login label {
+	float: left;
+	font-size: 15px;
+	width: 105px;
+}
+#login input:not([type=submit]) {
+	font-size: 15px;
+	width: 250px;
+	height: 20px;
+	border-radius: 5px;
+}
+
+#login input[type=submit] {
+	width: 200px;
+	height: 25px;
+	margin: 20px auto;
+	background-color: #980000;
+	color: #FFFFFF;
+	border: none;
+}
+#login input[type=submit]:hover {
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #000000;
+}
+

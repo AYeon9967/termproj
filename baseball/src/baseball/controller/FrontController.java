@@ -12,11 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontController extends HttpServlet {
 	HashMap<String, Controller> map = null;
 	
+	@Override
 	public void init(ServletConfig config) throws ServletException {
 		map = new HashMap<String, Controller>();
 		map.put("/join.do", new JoinController());
+		map.put("/login.do", new LoginController());
+		map.put("/bbswrite.do", new WriteController());
+		map.put("/bbslist.do", new ListController());
+		map.put("/bbsview.do", new ViewController());
 	}
 	
+	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
 		String contextPath = req.getContextPath();

@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입 성공</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-<h1>야구볼래? 가입을 축하드립니다</h1>
-
-${name }
 
 </body>
 </html>

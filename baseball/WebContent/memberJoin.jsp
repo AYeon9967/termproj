@@ -10,16 +10,17 @@
 <body>
 	<h1>Welcome to 야구볼래?</h1>
 	<form action="join.do" method="post" id="signup">
+	<p>* 필수 입력 사항</p>
 		<fieldset>
 			<legend>가입 정보</legend>
 			<ul>
 				<li>
-           			<label for="id">아이디</label>
+           			<label for="id">아이디 *</label>
            			<input type="text" name="id" placeholder="8-16자 이내" autofocus required>
-          			<input type="button" value="아이디 중복확인">
+          			${msg }<br>
         		</li>
         		<li>
-          			<label for="pwd">비밀번호</label>
+          			<label for="pwd">비밀번호 *</label>
          			<input type="password" name="pwd" placeholder="영문, 숫자, 특수문자 혼합" required>
          		</li>
          		<li>
@@ -44,7 +45,7 @@
 			<legend>회원 정보</legend>
 			<ul>
 				<li>
-          			<label for="name">이름</label>
+          			<label for="name">이름 *</label>
           			<input type="text" name="name" placeholder="공백없이 입력하세요" required>
          		</li>       
          		<li>
