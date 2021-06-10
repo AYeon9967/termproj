@@ -73,10 +73,8 @@ public class BbsDao {
 			pstmt.setString(5, bDto.getId());
 			pstmt.setString(6, bDto.getBbsimg());
 			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			this.close(conn, pstmt, null);
+		} catch (SQLException e) { System.out.print("write error " + e);
+		} finally { this.close(conn, pstmt, null);
 		}
 		return result;
 	}
@@ -104,10 +102,8 @@ public class BbsDao {
 				list.add(bbsDto);
 			}
 			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(conn, pstmt, rs);
+		} catch (Exception e) { System.out.print("sList error " + e);
+		} finally { close(conn, pstmt, rs);
 		}
 		return list;
 	}
@@ -119,7 +115,6 @@ public class BbsDao {
 		Bbs bbsDto = new Bbs();
 		
 		String sql = "select * from bbs where bbsid = ?";
-		
 		try {
 			conn = connect();
 			pstmt = conn.prepareStatement(sql);
@@ -137,12 +132,50 @@ public class BbsDao {
 				bbsDto.setBbsimg(rs.getString("bbsimg"));
 			}
 			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(conn, pstmt, rs);
+		} catch (SQLException e) { System.out.print("sById error " + e);
+		} finally { close(conn, pstmt, rs);
 		}
 		return bbsDto;
+	}
+
+	public void bbsdelete(String bbsId) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = connect();
+			pstmt = conn.prepareStatement("delete from bbs where bbsid=?;");
+			pstmt.setString(1, bbsId);
+			pstmt.executeUpdate();
+		} catch(Exception e) { System.out.print("bDelete error " + e);
+		} finally { close(conn, pstmt, null);
+		}
+	}
+
+	public boolean deleteusercheck(String bbsId, String sessionID) {
+		boolean result = false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = connect();
+			String sql = "select id from bbs where bbsid = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bbsId);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				if (rs.getString("id").equals(sessionID) && sessionID != null) {
+					result = true;
+				} else {
+					result = false;
+				}
+			}
+		} catch (SQLException e) { System.out.print("bDeleteUserCheck error " + e);
+		} finally { close(conn, pstmt, rs); }
+		
+		return result;
 	}
 	
 }

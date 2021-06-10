@@ -16,23 +16,27 @@
 <div class="controller">
 		<table>
 			<tr>
-				<th colspan="3" align="left"><h2>${bbsview.bbstitle }</h2></th>
+				<th rowspan="3" align="center" width="650px" id="upimg"><img id="img" src="upimg/${bbsview.bbsimg }"></th>
+				<th colspan="3" align="left"><h1>${bbsview.bbstitle }</h1></th>
 			</tr>
 			<tr>
-				<td width="30%">카테고리 : ${bbsview.bbscategory }</td>
-				<td width="30%">작성자 : ${bbsview.id }</td>
-				<td width="30%" align="right">${bbsview.bbsdate }</td>
+				<td width="200px">카테고리 : ${bbsview.bbscategory }</td>
+				<td width="200px">작성자 : ${bbsview.id }</td>
+				<td width="200px" align="right">${bbsview.bbsdate }</td>
 			</tr>
 			<tr id="content" valign="top" style="border-top-color: rgb(100, 100, 100); border-top-width: 1px">
-				<td colspan="3">${bbsview.bbscontent }</td>
+				<td colspan="3"><h3>${bbsview.bbscontent }</h3></td>
 			</tr>
 			<tr>
-				<td colspan="3"> ${bbsview.bbsimg }</td>
-			</tr>
+				<td align="right">${error }</td>
+				<td><a href="bbsdelete.do?bbsid=${bbsview.bbsid }"><button>게시물 삭제</button></a></td>
+				<td><a href="bbslist.do?team=${bbsview.team }"><button>게시판</button></a></td>
+				<td><a href="home.jsp"><button>홈으로</button></a></td>
+			</tr>	
 		</table>
 	<div>
-		<a href="bbslist.do?team=${bbsview.team }"><button>게시판</button></a>
-		<a href="home.jsp"><button>홈으로</button></a>
+		
+		
 	</div>
 </div>
 </body>

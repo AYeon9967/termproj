@@ -20,6 +20,7 @@ public class FrontController extends HttpServlet {
 		map.put("/bbswrite.do", new WriteController());
 		map.put("/bbslist.do", new ListController());
 		map.put("/bbsview.do", new ViewController());
+		map.put("/bbsdelete.do", new DeleteController());
 		map.put("/mypage.do", new MypageController());
 		map.put("/playerupdate.do", new PlayerUpdateController());
 		map.put("/logout.do", new LogoutController());

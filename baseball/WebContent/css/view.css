@@ -13,13 +13,20 @@
 * {
 	margin: 4px 0;
 }
+#upimg {
+	background: url('images/noimg.png') no-repeat center;
+	
+}
+#img {
+	width: 560px;
+}
 .controller {
 	padding: 25px 0;
 	margin: auto;
-	width: 800px;
+	width: 1550px;
 }
 table {
-	width: 800px;
+	width: 1550px;
 	margin: 25px 0;
 	padding: 20px;
 	border-collapse: collapse;
@@ -33,7 +40,7 @@ button {
 	color: white;
 	border-color: gray;
 	border-width: 1px;
-	width: 380px;
+	width: 280px;
 	height: 30px;
 	margin: 20px 4px;
 	border: none;
@@ -44,13 +51,13 @@ button:hover {
 	color: #980000;
 	border-color: gray;
 	border-width: 1px;
-	width: 380px;
+	width: 280px;
 	height: 30px;
 	margin: 20px 4px;
 	border: none;
 }
 #content {
-	width: 800px;
+	width: 600px;
 	height: 400px;
 	text-align: left;
 }

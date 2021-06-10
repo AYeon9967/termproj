@@ -14,7 +14,7 @@ a {
   text-decoration: none;
 }
 #header {
-  width: 90%;
+  width: 1600px;
   height: 290px;
   margin: 0px auto;
   background: #980000;

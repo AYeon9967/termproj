@@ -13,50 +13,31 @@
 </head>
 <%
 String team = request.getParameter("team");
-String image = null;
-if(team.equals("lg")) { image = "css/images/slg.jpg"; }
-else if(team.equals("samsung")) { image = "css/images/ssamsung.jpg"; }
-else if(team.equals("nc")) { image = "css/images/snc.jpg"; }
-else if(team.equals("kt")) { image = "css/images/skt.jpg"; }
-else if(team.equals("doosan")) { image = "css/images/sdoosan.jpg"; }
-else if(team.equals("ssg")) { image = "css/images/sssg.png"; }
-else if(team.equals("lotte")) {	image = "css/images/slotte.jpg"; }
-else if(team.equals("hanhwa")) { image = "css/images/shanhwa.jpg"; }
-else if(team.equals("kiwoom")) { image = "css/images/skiwoom.png"; }
-else if(team.equals("kia")) { image = "css/images/skia.png"; }
-
 BbsDao bbsDao = BbsDao.getInstance();
 List<Bbs> list = bbsDao.selectList(team);
 %>
-<style>
-	#seats{
-		margin: 25px auto;
-		height: 600px;
-		width: 600px;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-image: url('<%= image %>');
-	}
-</style>
 
 <body>
 
 <%@ include file="Head.jsp" %>
 
-<div id=seats></div>
-
 <div class="controller">
 	<table>
 		<tr>
+			<td id="simg" colspan="5" height="710px"><img src="css/images/s<%= team %>.jpg"></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
 			<th width="100px">카테고리</th>
-			<th width="150px">제목</th>
-			<th>내용</th>
+			<th width="250px">제목</th>
+			<th width="500px">내용</th>
 			<th width="100px">작성자</th>
 			<th width="150px">날짜</th>
 		</tr>
 	<%
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd, hh:mm:ss");
+	SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd, hh:mm");
 	int count = 0;
 	
 	for (Bbs b : list) {
