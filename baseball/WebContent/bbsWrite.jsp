@@ -15,6 +15,7 @@
 <%
 	String team = request.getParameter("team");
 
+	//이미지 처리
 	String saveDirectory = pageContext.getServletContext().getRealPath("/upimg");
 	System.out.println(saveDirectory);
 	

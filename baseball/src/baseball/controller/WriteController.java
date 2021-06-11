@@ -28,18 +28,6 @@ public class WriteController implements Controller {
 		String saveDirectory = (String)session.getAttribute("saveDirectory");
 		System.out.println(saveDirectory);
 		
-//		이미지 처리
-//		String saveDirectory = "/baseball/WebContent/css/upimg";
-		
-//		String saveDirectory = pageContext.getServletContext().getRealPath("/days23/upload");
-//		System.out.println(saveDirectory);
-		
-//		String saveDirectory = pageContext.getServletContext().getRealPath("/upimg");
-//		System.out.println(saveDirectory);
-//		
-//		File saveDir = new File(saveDirectory);
-//		if (!saveDir.exists()) saveDir.mkdirs();
-		
 		int maxPostSize = 1024 * 1024 * 5;
 		String encoding = "UTF-8";
 

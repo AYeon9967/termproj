@@ -38,7 +38,7 @@
 		</table>	
 	</form>
 	<div>
-		<button> -- </button>
+		<a href="memberJoin.jsp"><button>회원가입</button></a>
 		<a href="home.jsp"><button>홈으로</button></a>
 	</div>
 </div>
